@@ -1,0 +1,87 @@
+<!--  document
+    HTML 문서 전체를 대변하는 객체
+    프로퍼티 - HTML 문서의 전반적인 속성 내포
+    메소드 =DOM 객체 검색, DOM 객체 생성, HTML 문서 전반적 제어
+    DOM 객체를 접근하는 경로의 시각점
+    DOM 트리의 최상위 객체
+    브라우저는 HTML 문서 로즈 전, document 객체를 먼저 생성
+    document 객체를 뿌리로 하여 DOM 트리 새엇ㅇ
+    document 객체 접근
+    window.document 또는 document 이름으로 접근
+    document 객체는 DOM 객체가 아님
+    연결된 스타일 시트가 없음
+    document.style.color = "red";
+    //오류.documnet에는 CSS3스타일 시트가 연결되지 않음
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>documnet 객체의 주요 프로퍼티</title>
+     <script>
+         var text = "문서 로딩 중일 때 readyState =" + document.readyState + "\n";
+
+     </script>
+ </head>
+ <body style = "background-color: yellow; color :blue; direction: rtl"
+                onload="printProperties()">
+                <!-- 
+
+                 -->
+                 <h3>document 의 주요 프로퍼티</h3><hr>
+                 <a href="http://www.naver.com"> 네이버 홈페이지</a>
+                 <div>이곳은 div 영역입니다.</div>
+                 <input id= "input" type="text" value="여기 포커스가 있습니다.">
+
+                 <script>
+                     //문서가 완전히 로드(출력)되었을때, 현재 document의 프로퍼티 출력
+                     function printProperties() {
+                         document.getElementById("input").focus(); //<input> 태그에 포커스를 줌.
+                    
+                    text += "1. location =" + document.location + "\n";
+                    // 공식적으로 window.location은 현재 위치를 object 값으로 가져올 수 있는 표준방법이고 
+                    // document.location는 현재 URL 값이 String으로 반환됩니다.
+
+                    text += "2.URL =" + document.URL + "\n";
+                    //혼란을 피하기 위해 document.location은 document.URL로 변경되었습니다.
+
+                    text += "3. title = " + document.tilte + "\n";
+                    //문서의 <title> 태그의 내용을 반환합니다.
+                    text += "4. head의 id = " + document.head.id + "\n";
+                    //현재 문서의 <head> 요소(Document.head는 읽기 전용)
+                    text += "5. body color =" + document.body.style.color  + "\n";
+                    //Set a background color for a document:
+                    text += "6. domain =" + document.domain  + "\n";
+                    //Document 인터페이스의 domain 속성은 동일 출처 정책에서 사용하는 현재 문서의 출처에서 도메인 부분을 설정하거나 가져옵니다.
+                    //domain 속성을 성공적으로 설정하면 출처의 포트를 null로 설정합니다.
+                    text +="7. lastModified =" + document.lastModified  + "\n";
+                    //The lastModified property returns the date and time the current document was last modified.
+                    // 마지막으로 수정된 날짜와 시간반환
+                    text +="8. defaultView =" + document.defaultView  + "\n";
+                    //문서와 연결된 window 객체를 반환합니다. 가능하지 않은 경우 null을 대신 반환합니다.
+                    text +="9. 문서의 로드 완료 후 readyState = " + document.readyState  + "\n";
+                    //document의 로딩 상태를 확인할 수 있다.
+                    //Document.readyState 속성 값이 바뀔 때 readystatechange 이벤트가 document에서 일어난다.
+                    //document의 readyState 상태는 아래 3가지가 될 수 있다.
+                    //loading :document 로딩중.
+                    //interactive :문서의 로딩은 끝이 나고 해석 중 이지만  
+                    //              images, stylesheets, frames과 같은 하위 자원들은 로딩되고 있는 상태이다.
+                    //complete: 문서와 모든 하위 자원들의 로드가 완료된 상태이다. 
+                    //          이 상태는 load  이벤트가 발생되기 직전 상태이다.
+
+                    text +="10. referrer =" +document.referrer  + "\n";
+                    //페이지로 바로 접근하였을 경우 이 값은 빈 문자열을 반환함
+                    text += "11. activeElement =" + document.activeElement.Value  + "\n";
+                    //Document와 ShadowRoot 인터페이스의 activeElement 읽기 전용 속성은 DOM과 섀도우 DOM 내에서 현재 포커스를 받은 Element 객체를 반환합니다. 
+                    //이 속성은 DocumentOrShadowRoot 믹스인에서 상속받습니다.
+                    text += "12. documentElement 의 태그 이름 =" + document.documentElement.tagName  + "\n";
+                    //// 엘리먼트의 HTMLCollection 과 주어진 태그명을 반환
+                            alert(text);
+
+                     }
+                 </script>
+
+     
+ </body>
+ </html>

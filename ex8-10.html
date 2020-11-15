@@ -1,0 +1,59 @@
+<!-- 
+    이 자바스크립트 코드는 사실상 아래쪽의
+    <div> 태그 정보를 가진 DOM 객체 생성
+
+        var newDIV = document.createElement("div");
+        newDIV.innerHTML = "새로 생성된 DIV입니다.";
+        newDIV.setAttribute("id", "myDiv");
+        newDIV.style.bachgroundColor = "yellow";
+                        
+                        
+        <div id="myDiv"
+                style="background-color:yellow">
+                새로 생성된 DIV입니다.
+    </div>
+    -->
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>문서의 동적 구성</title>
+        <script>
+            function createDIV(){
+                var obj = document.getElementById("parent");
+                var newDIV = document.createElement("div");
+                newDIV.innerHTML = "새로 생성된 DIV입니다.";
+                newDIV.setAttribute("id", "myDiv");
+                //.setAttribute()는 속성이 id이고 이름이 myDiv //선택한 요소(element)의 속성(attribute) 값을 정합니다.
+                newDIV.style.backgroundColor="yellow";
+                newDIV.onclick=function(){
+                    var p = this.parentElement; // 부모 HTML 태그 요소 생성된 div를 제거한다.
+                    p.removeChild(this); // 자신을 부모로부터 제거
+                };
+                obj.appendChild(newDIV); ///가져온 body의 id를 이용하여 appendChild로 요소를 나타낸다.
+                //메서드 를 사용하여 지정된 부모 노드의 자식 노드 목록 끝에 노드를 추가하는 방법을 배웁니다 
+                //body에 자식 태그로 추가ㅡ,
+
+            }
+        </script>
+    </head>
+    <body id="parent">
+        <h3>DIV 객체를 동적으로 생성, 삽입, 삭제하는 예제</h3><hr>
+        <p>DOM 트리에 동적으로 객체를 삽입할 수 있습니다.
+            createElement(), appendChild(),
+            removeChild() 메소드를 이용하여 새로운 객체를 생성,
+            삽입, 삭제하는 예제입니다.</p>
+            <a href="javascript:createDIV()">DIV 생성</a><p>
+                
+         <p>
+    </body>
+    </html>
+    
+<!-- 
+    //.createElement()는 요소
+    //.createTextNode()는 선택한 요소에 텍스트를 추가
+    //.appendChild()는 선택한 요소 안에 자식 요소를 추가 
+
+    DOM 은 웹 페이지의 객체 지향 표현 -->
