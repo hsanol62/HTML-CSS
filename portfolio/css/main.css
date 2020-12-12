@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Nerko+One&family=Open+Sans:ital,wght@0,300;1,700&display=swap');
+/* CSS RESET */
+
+html,body{padding:0; margin: 0; width: 100% ; height: 100%;}
+h1,h2,h3,h4,h5,h6{font-size:100%; line-height: 1; margin: 0; padding: 0; font-weight: normal;}
+li{
+   list-style: none;
+   font-family: 'Lobster', cursive;
+   
+}
+.hidden{display: none;}
+
+
+/* c */
+a {
+    color: rgb(17, 17, 17);
+    text-decoration:none !important;
+
+    
+}
+
+img{
+    vertical-align: top;
+}
+
+body{
+    font-family: 'Lobster', cursive;
+    font-size: 10px;
+    color: rgb(153, 70, 70)
+   
+}
+
+/* header */
+header{
+    position: relative;
+    z-index: 1;
+    /* 비치지 않기 위해선 background를 준다. */
+}
+header .top_navigation{
+    border-bottom: 1px solid grey;
+    margin-top: 15px;
+    background: white;
+}
+/* 맨위 이메일 전화 */
+
+.contact_list, .social_list{
+
+    display: flex;
+
+}
+.contact_list li {
+    margin-right: 20px;
+    display: flex;
+    font-size: 16px;
+    line-height: 16px;
+ 
+}
+
+ .social_list li{
+     margin-left: 20px;
+ }
+
+ .social_list li a{
+    font-size: 12px;
+    line-height: 16px;
+    color: black;
+ }
+
+.contact_list li span {
+    margin-right: 20px;
+}
+
+.main_navigation{
+    padding: 31px;
+    background: white;
+}
+.gnb, .gnb ul {
+    display: flex;
+    margin-bottom: 20px;
+}
+/* 메뉴바 */
+.logo { margin-right:81px;}
+
+.logo a {
+    width: 160px;
+    height: 45px;
+    background: url(../images/shopy_log.png)  no-repeat;
+    background-size: 160px 45px;
+    text-indent: -9999em;
+    /* 들여쓰기 */
+    display: block;
+}
+
+.gnb ul li {
+    margin-right: 41px;
+    font-size: 20px;
+}
+.gnb ul li a {
+    
+    line-height: 45px;
+    color: black;
+}
+.gnb ul li a:hover {
+    color: orangered !important
+}
+.shopping_nav{
+    display: flex;
+    
+}
+.shopping_nav li{ 
+    margin-left: 34px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 35px;
+}
+/* 메뉴 로고들 */
+
+.fas:hover {
+    color: orangered !important
+}
+
+.cart {
+    position: relative;
+}
+
+/* 다시보기 */
+.shopping_nav .cart:before {
+    content: attr(data-cart);
+    font-size:15px;
+    color:white;
+    text-align: center;
+
+    background: rgb(253, 59, 0);
+    position: absolute;
+    left: 5px;
+   
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    bottom: calc(100% - 9px);
+    text-indent: 0;
+    line-height: 18px;
+    /* 위치 올림 */
+}
+
+header form {
+    position: absolute;
+    /* 안에 있는 컨텐츠만큼 쓴다. */
+    left: 0;
+    right: 0;
+    /* 너비 다 쓰게 하기 위해서 줌 */
+    padding: 20px 0;
+    text-align: center;
+    box-shadow:0 5px 5px rgba(0,0,0,0.1);
+    background: white;
+    top:0;
+    /*맨위로 올림*/
+    z-index: -1;
+      /*헤더 아래로 깔음*/
+    transition: 0.5s;
+
+}
+header form.active {
+    top:clac(100% +1px);
+}
+header form .inputtext {
+    width: 400px;
+    height: 40px;
+    text-align: center;
+    border: none;
+    border-bottom: 1px solid black;
+    display: inline-block;
+    margin-right: 10px;
+    outline: none;
+    /* 검색 테두리를 없앤다. */
+}
+header form .inputtext:focus {
+    border-bottom-color:orangered;
+}
+/* form은 블록 요소 header가 기준 */
+
+input[type="submit"] {
+    font-family: FontAwesome;
+    display: inline-block;
+    border: none;
+    vertical-align: bottom;
+    /* 아래에 붙인다. 앞에있는 inline요소와 뒤에있는거 라인 안맞을때 */
+    background: none;
+}
+/* submit에 fontawesome 넣기 value에 코드 */
+
+
+
+/* 슬라이드 */
+.main_slides li{
+    height: 650px;
+    background: no-repeat, center;
+
+}
+.main_slides .slide1{
+ background-image:  url(../images/feature_slide_01.jpg);
+
+}
+.main_slides .slide_contents{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    /* !!높이를 쓰게해서 align center로 가운데 오게 한다.!! */
+}
+
+
+
+.main_slides li .slide_contents .contents{
+    margin-left: 50px;
+}
+.main_slides li .slide_contents .contents h2{
+    font-size: 52px;
+    color:orangered;
+    font-weight: 800;
+    margin-bottom: 30px;
+
+}
+.main_slides li .slide_contents .contents h3{
+    color: black;
+    font-size:18px;
+    margin-bottom: 13px;
+    font-weight: 600;
+}
+.main_slides li .slide_contents .contents p{
+    margin-bottom:40px;
+}
+.price_order .price{
+    color: rgb(27, 25, 25);
+    font-size: 18px;
+    margin-right: 30px;
+}
+.price_order .cart{
+    display: inline-block;
+    margin-right:6px;
+    background-position-y: -30px;
+}
+.price_order .order{
+    color: orangered; 
+    font-size: 18px;
+}
+
+.bx-controls{
+    position: absolute;
+    /* margin: 50px; */
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%);
+    margin-left:-584px ;
+}
+
+.main_slides .bx-controls .bx-pager-item a{
+    width:12px;
+    height: 37px;
+    background-color: white;
+    margin-bottom: 9px;
+    display: block;
+
+}
+
+.main_slides .bx-controls .bx-pager-item a.active{
+    height: 36px;
+    background-color: orangered;
+}

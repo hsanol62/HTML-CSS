@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>layout3</title>
+    <style>
+        *{padding:0; margin:0;}
+        body{ background-color: rgb(240, 214, 240);}
+        #wrap {width:1200px; margin: 0 auto;}
+        header{width:100%; height:150px; background:rgb(180, 51, 180);}
+        aside{float: left; width:30%;  height:700px; background:rgb(243, 183, 243);}
+        section{float: left; width:70%; height:700px; background:rgb(206, 126, 206);}
+        footer{clear:both; width:100%px; height:150px; background:rgb(80, 61, 80);}
+       
+        @media (max-width: 1220px){
+            #wrap {width: 95%;}
+
+
+            @media (max-width: 768px){
+            #wrap {width:100%;}
+
+            
+        @media (max-width: 480px){
+            #wrap {width: 100%;}
+            header{height: 300px;}
+            aside{float : none;}
+            section {float: none;}
+        }
+    </style>
+</head>
+<body>
+    <div id = "wrap">
+        <header></header>
+        <aside></aside>
+        <section></section>
+        <footer></footer>
+    </div>
+    
+</body>
+</html>
