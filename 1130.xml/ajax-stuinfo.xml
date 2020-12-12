@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<stuinfo>
+    <student>
+        <gradepoint>1.0학점</gradepoint>
+    </student>
+     <student>
+        <gradepoint>2.0학점</gradepoint>
+    </student>
+     <student>
+        <gradepoint>3.0학점</gradepoint>
+    </student>
+     <student>
+        <gradepoint>4.0학점</gradepoint>
+    </student>
+    </stuinfo>
+    <!-- $.load() 메소드
+    서버로부터 데이터를 받아오는 가장 간단한 메소드로 많이 이용
+    서버로부터 데이터를 받아 메소드를 실행하는 대상 엘리먼트에 직접 추가
+    복잡한 선택 사항을 설정하지 않고도 빠르고 간단하게 웹 페이지의 동적 갱신이 가능
+    요청이 성공하면 메소드가 실행되는 대상 엘리먼트 내용이
+    서버에서 응답받은 HTML5 마크업 데이터로 대체
+    
+    $.load(url[, data] [,function(data)]);
+    $.load()메소드 선택 항목
+    function(daya)
+    요청 성공 콜백 함수(data:서버 반환 값)
+    data
+    서버로 전달되는 요청 내용(제이쿼리 객체맵이나 문자열)
+    url
+    요청이 보내질(주로 서버(의 URL 주소(필수항목, 기본값:현재페이지)
+    예) "sample.html" -->
+    <!-- $(document).ready(function() {
+        $('#BtnLoad3').click(function() {
+            $('#listArea').empty()l;
+            $('#listArea').load(;ajax-listinfo.html li',function(htmlData){
+                $('#listArea').listview('refresh');
+            });
+        });
+    }): -->

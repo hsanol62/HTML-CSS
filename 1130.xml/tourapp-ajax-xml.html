@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1"/> -->
+    <title>jQuery</title>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css">
+    <!--제이쿼리 모바일css파일 불러오기-->
+    <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
+<script>
+    var count=0;   //전체 레코드 개수를 위한 전역 변수
+    var Doc;       //XML 문서 DOM 복합 객체 참조를 위한 전역 변수
+    $(document).ready( function() {
+        $.ajax({
+            url: 'tour1.xml', //url: 'tour2.xml', 
+            // 불러올 문서
+            type: 'get',
+              //  서버로 전송하는 전송방식
+            dataType: 'xml',
+              //  서버에 전송한 데이터
+            timeout: 1000,
+            // 응답제한시간
+            success: function(xmlDoc) {
+                Doc=xmlDoc;
+                count = $(xmlDoc).find('attraction').size();
+                displayTour();
+            },
+            // xmlDoc에서 attraction 찾아 
+            // 성공시에 
+            error: function() {
+                $('body').html('<div>Error!!</div>');
+            }
+            // error 나면 body에 error 띄움
+        });
+    });
+
+    //관광지 정보를 리스트뷰로 표시
+    function displayTour() {
+        var i, tagList='', country='', name='', location='';
+        tagList = '<li data-role="list-divider">관광지 목록</li>';
+        // 테마
+          if(count > 0) {
+              for( i = 0; i < count; i+= 1) {
+                $record = $(Doc).find('attraction').eq(i);
+                // 선택한 요소의 인덱스 번호에 해당하는 요소를 찾습니다.
+                // $("선택자").eq("숫자");
+    tagList += '<li><a href="#"><img src="' + $record.find('picture').text() + '">';
+        // 사진 불러옴
+    tagList += '<p class="ui-li-aside">' + $record.attr('country') + '</p>';
+    // 나라 불러옴
+    tagList += '<h2>' + $record.find('name').text() + '</h2>';
+    // name 불러옴
+    tagList += '<p>지역 : ' + $record.find('location').text() + '</p></a></li>';
+    // location 불러옴
+
+              }
+          }
+          $('#attractionListArea').html(tagList);
+          $('#attractionListArea').listview('refresh');
+    }
+</script></head>
+<body>
+    <div data-role="page">
+        <div data-role="header">
+            <h1>세계 유명관광지 안내</h1>
+        </div>
+        <div data-role="content">
+            <!-- content 선언 -->
+        <ul data-role="listview" id="attractionListArea" data-diver-theme="b">
+            <!--  data-diver-theme 테마 적용 -->
+            </ul>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <!-- 헤더 푸터 고정 -->
+            <h4>월드 관광</h4>
+        </div>
+    </div>
+</body></html>

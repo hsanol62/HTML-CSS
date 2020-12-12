@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>일기 보기</title>
+   <style>
+       table{
+           background-color: aliceblue;
+       }
+       span{
+           border : 1px solid yellowgreen;
+           padding-left: 3px;
+           padding-right: 3px;
+       }
+/* span 테두리 여백왼쪽오른쪽 */
+       td, th{
+           padding-right: 5px;
+       }
+   </style> 
+</head>
+<body>
+    <h3>일기 보기</h3><hr>
+    <script>
+        if(window.localStorage){
+            document.write("<table>");
+            for(i=0; i<localStorage.length; i++){
+                var key=localStorage.key(i);
+                //  key() 메서드는 숫자 n이 전달되면 Storage의 n번째 key 이름을 반환합니다
+
+                var val=localStorage.getItem(key);
+                //localStorage에 있는 key 요소를 변수 val에 저장
+                document.write("<tr>");
+                    document.write("<td><span>" +(i+1)+"</span></td>");
+                    document.write("<th>" +key +"</td>");
+                    document.write("<td>" + val + "</td>");
+                    document.write("</tr>");
+            }
+            // table 형성
+            document.write("</table>");
+        }
+        else{
+            alert("지원하지 않습니다.");
+        }
+    </script>
+</body>
+</html>

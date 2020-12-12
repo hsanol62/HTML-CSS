@@ -1,0 +1,39 @@
+<!-- 워크 태스크 스스로 종료
+close()
+워커 객체가 워커 태스크를 강제 종료
+terminate() 메소드
+예) addWorker.terminete();
+워커 태스크가 종료하면워커 객체는 더 이상 워커 태스크와 message 이벤트를 
+주고받을 수 없다. -->
+
+<!DOCTYPE html>
+<html>
+<head><title>시작과 끝 숫자를 전달받아 합을 구하는 워커 태스크</title></head>
+<body>
+<h3>시작과 끝 숫자를 전달받아 합을 구하는 워커 태스크</h3>
+<hr>
+<input id="from" type="text" size="10"> ~ 
+<input id="to" type="text" size="10"> =
+<input id="sum" type="text" size="10">
+<button id="add" onclick="send()">add</button>
+<script>
+    var addWorker = new Worker("add.js"); // add.js 워커 생성
+
+    function send() { // 워크 태스크에 시작 숫자와 끝 숫자 전송
+        var parameters = { 
+            from: document.getElementById("from").value,
+            to: document.getElementById("to").value
+        };// 시작  끝  변수 parameter에 저장
+         
+        addWorker.postMessage(parameters);
+    }// 시작 숫자와 끝 숫자를 담은 객체를 워커 태스크로 전송
+     // postMessage: Worker 자신의 내부 영역으로 메시지를 전달
+
+   
+    addWorker.onmessage = function (e) { 
+         //onmessage:  worker 의 메시지를 전달받기위한 이벤트 핸들러를 등록
+       
+        document.getElementById("sum").value = e.data;
+    } //  합 출력
+</script>
+</body></html>

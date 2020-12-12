@@ -1,0 +1,31 @@
+    <!-- <?xml version="1.0" encoding="utf-8"?> -->
+    <bookstore>
+     <book>
+     <!-- <book kind = ""> 하면 attr -->
+     <title> XML DATABASE Programing </title>
+       <kind>컴퓨터</kind>
+       <author>홍길동</author>
+       <publisher> 행복 출판사</publisher>
+       <price>25000</price>
+       </book>
+          <book>
+     <title> DATABASE Programing </title>
+       <kind>컴퓨ed터</kind>
+       <author>홍길동ehd</author>
+       <publisher> 행복 출판사</publisher>
+       <price>25000</price>
+       </book>
+          <book>
+     <title>  Programing </title>
+       <kind>das</kind>
+       <author>dsadd</author>
+       <publisher> 행복 출판사</publisher>
+       <price>25000</price>
+       </book>
+       </bookstore>
+    <!-- $record = $(Doc).find("book").eq(count);
+            form1.txtKind.value = $record.attr("kind");
+            form1.txtTitle.value = $record.find("title").text();
+            form1.txtAuthor.value = $record.find("author").text()
+            form1.txtPublisher.value = $record.find("publisher").text();
+            form1.txtPrice.value = $record.find("price").text(); -->

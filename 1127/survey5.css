@@ -1,0 +1,24 @@
+header {
+    background-color: yellow;
+    border: 2px solid yellow;
+    font-size: 18px;
+}
+h1{
+    text-align: center;
+}
+form {
+    background: pink;
+}
+
+body{
+    margin: 0;
+}
+section{
+    margin-left : 10px;
+    margin-right : 10px;
+}
+footer{
+    height: 65px;
+    padding-top: 5px;
+    background: rgb(255, 164, 255);
+}

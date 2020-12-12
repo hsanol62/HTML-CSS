@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>미니 프로젝트</title>
+<!-- Bootstrap CDN -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<!-- 상단 메뉴 부분 -->
+<nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top shadow-lg">
+	<a class="navbar-brand" href="index.html">CitaCampus</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navMenu">
+			<!-- navmenu에 적용 -->
+		<span class="navbar-toggler-icon"></span>     
+		   <!-- 아이콘   -->
+	</button>
+	<div class="collapse navbar-collapse" id="navMenu">
+		<ul class="navbar-nav">
+			<li class="nav-item">
+				<a href="board_main.html" class="nav-link">자유게시판</a>
+			</li>
+			<li class="nav-item">
+				<a href="board_main.html" class="nav-link">유머게시판</a>
+			</li>
+			<li class="nav-item">
+				<a href="board_main.html" class="nav-link">정치게시판</a>
+			</li>
+			<li class="nav-item">
+				<a href="board_main.html" class="nav-link">스포츠게시판</a>
+			</li>
+		</ul>
+		
+		<ul class="navbar-nav ml-auto">
+			<li class="nav-item">
+				<a href="login.html" class="nav-link">로그인</a>
+			</li>
+			<li class="nav-item">
+				<a href="join.html" class="nav-link">회원가입</a>
+			</li>
+			<li class="nav-item">
+				<a href="modify_user.html" class="nav-link">정보수정</a>
+			</li>
+			<li class="nav-item">
+				<a href="index.html" class="nav-link">로그아웃</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+<!-- 메뉴바  -->
+
+<div class="container" style="margin-top:100px">
+	<div class="row">
+		<div class="col-sm-3"></div>
+		<!-- 768px 이하에서 세로로 표시 시작 -->
+		<div class="col-sm-6">
+			<div class="card shadow">
+				<!-- 카드 그림자 -->
+				<div class="card-body">
+					<form action="login.html" method="post">
+						<div class="form-group">
+							<label for="user_name">이름</label>
+							<input type="text" id="user_name" name="user_name" class="form-control"/>
+							<!-- .form-control  클래스와 함께하는 모든 택스트 관련  <input>, <textarea>, 과 <select> 요소는  100%의 폭을 갖는다.. -->
+						</div>
+						<div class="form-group">
+							<label for="user_id">아이디</label>
+							<div class="input-group">
+								<input type="text" id="user_id" name="user_id" class="form-control"/>
+								<div class="input-group-append">
+									<!-- input-group-append 앞 뒤 위치를 정하는  -->
+									<!-- append 덧붙이다. -->
+									<button type="button" class="btn btn-primary">중복확인</button>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="user_pw">비밀번호</label>
+							<input type="password" id="user_pw" name="user_pw" class="form-control"/>
+						</div>
+						<div class="form-group">
+							<label for="user_pw2">비밀번호 확인</label>
+							<input type="password" id="user_pw2" name="user_pw2" class="form-control"/>
+						</div>
+						<div class="form-group">
+							<div class="text-right">
+								<button type="submit" class="btn btn-primary">회원가입</button>
+
+								<!-- 입력폼의 컨트롤 종류는 하나 하나가 class="form-group"를 설정된 <div> 태그로 정리된다.
+								예를 들어 <label>와 <input>가 그 중에 있으면, 레이블 아래에 입력 항목을 정렬된 형태로 배치된다.
+	 							이 입력 항목 그룹화하는 것이 class="form-group"라는 클래스이다.
+ -->
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-3"></div>
+		<!-- col-sm-3일반적인 작은 장치 너비 (> 768 픽셀)에서 너비 가 12 열 중 3 열 -->
+	</div>
+</div>
+
+<div class="container-fluid bg-dark text-white" style="margin-top:50px;padding-top:30px;padding-bottom:30px">
+	<div class="container">
+		<p>http://www.</p>
+		<p>게시판 예제</p>
+		<p>사업자번호 : 000-111-222</p>
+	</div>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+

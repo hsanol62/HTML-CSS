@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포스트잇 출력</title>
+   <style>
+       table{
+           background-color: rgb(204, 221, 236);
+       }
+       /* 테이블 배경 */
+       span{
+           border : 1px solid yellowgreen;
+           padding-left: 3px;
+           padding-right: 3px;
+       }
+       /* 테두리, 여백 */
+
+       td, th{
+           padding-right: 10px;
+       }
+       /* 오른족 여백 */
+   </style> 
+</head>
+<body>
+    <h3>포스트잇 출력</h3><hr>
+    <script>
+        if(window.localStorage){
+            document.write("<table>");
+            for(i=0; i<localStorage.length; i++){
+                var key=localStorage.key(i);
+                //  key() 메서드는 숫자 n이 전달되면 Storage의 n번째 key 이름을 반환합니다
+                var val=localStorage.getItem(key);
+                // key에 해당하는 값을 가져와 val에 저장
+                                document.write("<tr>");
+                    document.write("<td><span>" +(i+1)+"</span></td>");
+                    document.write("<th>" +key +"</th>");
+                    document.write("<td>" + val + "</td>");
+                    document.write("</tr>");
+            }
+            document.write("</table>");
+        }
+        else{
+            alert("지원하지 않습니다.");
+        }
+    </script>
+</body>
+</html>
