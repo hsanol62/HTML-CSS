@@ -1,0 +1,29 @@
+<!-- prac9-07 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 객체의 target</title>
+    <script>
+        window.onmouseover = function(e) {
+            if(e.target.tagName.toLowerCase() != "span") return;
+            e.target.style.textDecoration = "underLine";
+            // toLowerCase 소문자 span
+
+        }
+        window.onmouseout = function(e) {
+            if (e.target.tagName.toLowerCase() != "span")return;
+            //아니라면 빠지고 span이랑 같다면 underLine생기고 
+            e.target.style.textDecoration = "none";
+        }
+    </script>
+</head>
+<body>
+    <h3>span 태그에만 onmouseover/onmouseout </h3><hr>
+    <p>span 태그에 대해서만 <span>마우스</span> 가 올라올때
+    밑줄이 그어지고 <span>마우스</span>가 내려갈때 밑줄이 사라지도록</p>
+    <span>자바스크립트 코드</span>를 작성한다.
+</body>
+</html>

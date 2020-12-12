@@ -1,0 +1,34 @@
+<!-- prac9-03 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onkeydown</title>
+    <script>
+        function calculate(e) {
+            if(e.keyCode==13) {
+                //텍스트 하나만 쳐서 엔터치면 에러나기 때문에 잡아준다.
+                var exp = document.getElementById("exp");
+                // exp 생성 id 가exp인 요소 불러와 넣음
+                var result = document.getElementById("result");
+                result.value = eval (exp.value);
+                //exp 값eval 함수를 사용해서 result값으로 나온다. 
+            }
+        }
+    </script>
+</head>
+<body>
+    <h3>계산기 만들기</h3><hr>
+    수식을 입력하고 &lt;Enter&gt;를 입력하세요. 
+    // &lt;Enter&gt; : <> 표시
+    <p>
+        <form>
+            식 <input tpye ="text" id = "exp" value = "" onkeydown="calculate(event)"><br>
+            값 <input type = "text" id ="result">
+        </form>
+    </p>
+    
+</body>
+</html>

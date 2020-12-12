@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<title>HTML5</title>
+<script>
+function printWelcome() {
+	var newWin = window.open("", "", "left=500,top=400,width=200,height=80");
+	newWin.document.write("접속 감사합니다!<br>");
+//써있는 말1
+	newWin.document.title = "환영";
+	// 창 바에 써있는 타이틀
+	newWin.document.body.style.backgroundColor = "yellowgreen";
+	//창 뒷배경
+	newWin.document.write("열심히 하세요!");	
+	//써있는 말2
+	newWin.document.close(); 
+}
+</script></head>
+<body onload="printWelcome()">
+<h3>HTML5</h3><hr>
+<p>
+HTML5를 학습하는 사이트입니다. 
+여기서 HTML5, CSS3, 자바스크립트를
+배울 수 있습니다.</p>
+</body></html>
